@@ -31,6 +31,7 @@ mediatek_setup_interfaces()
 	asus,rt-ax59u|\
 	cetron,ct3003|\
 	confiabits,mt7981|\
+	cudy,wr3000h-v1|\
 	cudy,wr3000-v1|\
 	jcg,q30-pro|\
 	qihoo,360t7|\
