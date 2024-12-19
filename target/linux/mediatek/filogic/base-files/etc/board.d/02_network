@@ -31,7 +31,6 @@ mediatek_setup_interfaces()
 	asus,rt-ax59u|\
 	cetron,ct3003|\
 	confiabits,mt7981|\
-	cudy,wr3000h-v1|\
 	cudy,wr3000-v1|\
 	jcg,q30-pro|\
 	keenetic,kn-3811|\
@@ -39,6 +38,9 @@ mediatek_setup_interfaces()
 	routerich,ax3000|\
 	routerich,ax3000-ubootmod)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3" wan
+		;;
+	cudy,wr3000h-v1)
+		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" wan
 		;;
 	asus,tuf-ax4200|\
 	jdcloud,re-cp-03|\

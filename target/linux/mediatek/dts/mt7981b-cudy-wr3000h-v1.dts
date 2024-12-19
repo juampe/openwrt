@@ -105,6 +105,22 @@
 			pause;
 		};
 	};
+
+	gmac1: mac@1 {
+		compatible = "mediatek,eth-mac";
+		reg = <1>;
+		phy-mode = "2500base-x";
+		phy-handle = <&phy6>;
+
+		nvmem-cell-names = "mac-address";
+		nvmem-cells = <&macaddr_bdinfo_de00 1>;
+
+		fixed-link {
+			speed = <2500>;
+			full-duplex;
+			pause;
+		};
+	};
 };
 
 &mdio_bus {
@@ -116,6 +132,11 @@
 		#interrupt-cells = <1>;
 		interrupt-parent = <&pio>;
 		interrupts = <38 IRQ_TYPE_LEVEL_HIGH>;
+	};
+	phy6: phy@1 {
+		compatible = "ethernet-phy-id001c.c849";
+		reg = <6>;
+		phy-mode = "2500base-x";
 	};
 };
 
@@ -235,29 +256,21 @@
 
 		port@0 {
 			reg = <0>;
-			label = "wan";
-
-			nvmem-cell-names = "mac-address";
-			nvmem-cells = <&macaddr_bdinfo_de00 1>;
+			label = "lan1";
 		};
 
 		port@1 {
 			reg = <1>;
-			label = "lan1";
+			label = "lan2";
 		};
 
 		port@2 {
 			reg = <2>;
-			label = "lan2";
+			label = "lan3";
 		};
 
 		port@3 {
 			reg = <3>;
-			label = "lan3";
-		};
-
-		port@4 {
-			reg = <4>;
 			label = "lan4";
 		};
 
